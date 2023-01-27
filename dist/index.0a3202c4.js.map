@@ -1,0 +1,1 @@
+{"mappings":"AAAAA,OAAOC,iBAAiB,oBAAoB,KAC1CC,QAAQC,IAAI","sources":["client.ts"],"sourcesContent":["window.addEventListener(\"DOMContentLoaded\", () => {\n  console.log(\"Loaded\");\n});\n"],"names":["window","addEventListener","console","log"],"version":3,"file":"index.0a3202c4.js.map"}
