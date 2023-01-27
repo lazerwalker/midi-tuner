@@ -1,1 +1,0 @@
-{"mappings":"AAGAA,OAAOC,iBAAiB,oBAHR,KACH,IAAIC,UAAU,QAAQF,OAAOG,SAASC,OAAM","sources":["client.ts"],"sourcesContent":["const connect = () => {\n  const ws = new WebSocket(`ws://${window.location.host}`);\n};\nwindow.addEventListener(\"DOMContentLoaded\", connect);\n"],"names":["window","addEventListener","WebSocket","location","host"],"version":3,"file":"index.351dbdcf.js.map"}
