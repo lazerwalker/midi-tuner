@@ -6,4 +6,8 @@ export default function () {
   ws.addEventListener("message", (event) => {
     console.log(event.data);
   });
+
+  return function send(message: string) {
+    ws.send(message);
+  };
 }

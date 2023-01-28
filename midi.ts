@@ -1,6 +1,6 @@
 import { WebMidi } from "webmidi";
 
-export default function () {
+export default function (changed: (channel: number, value: number) => void) {
   WebMidi.enable()
     .then(onEnabled)
     .catch((err) => alert(err));
@@ -17,12 +17,12 @@ export default function () {
     }
 
     const mySynth = WebMidi.inputs[0];
-    // const mySynth = WebMidi.getInputByName("TYPE NAME HERE!")
 
     mySynth.channels[1].addListener("controlchange", (e) => {
-      const input = e.controller.number;
+      // "Channel" is not an accurate term, but shrug
+      const channel = e.controller.number;
       const value = e.value;
-      document.body.innerHTML += `${input}: ${value} <br/>`;
+      changed(channel, value as number);
     });
   }
 }
