@@ -8,6 +8,6 @@ export default function () {
   });
 
   return function send(message: string) {
-    ws.send(message);
+    if (ws.readyState === ws.OPEN) ws.send(message);
   };
 }
