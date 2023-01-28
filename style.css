@@ -1,0 +1,45 @@
+.component {
+  display: inline-block;
+  width: 12vw; 
+}
+
+input {
+  margin-bottom: 0.5em;
+}
+
+.computed {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+}
+
+.raw {
+  border: 1px solid black;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 1px;
+  padding-left: 10px;
+}
+
+.name {
+  width: 100%;
+}
+
+.num {
+  width: 50%;
+
+}
+
+label {
+  float: left;
+}
+
+.input {
+  margin: 10px;
+  margin-bottom: 60px;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}

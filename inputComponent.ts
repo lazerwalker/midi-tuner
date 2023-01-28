@@ -37,27 +37,31 @@ export default function inputComponent(
   el.className = "component";
 
   el.innerHTML = `
-<h2>${channel}</h2>
-<div>
-  <label for="name-${channel}">Key:</label>
-  <input id="name-${channel}" value="${name}"/><br/>
+  <div class="input">
+  <div id="computed-${channel}" class="computed">${computed}</div>
+  <div id="raw-${channel}" class="raw">${raw}</div>
 
-  <label for="min-${channel}">Min:</label>
-  <input id="min-${channel}" value="${min}" /><br/>
+  <input id="name-${channel}" value="${name}" class="name"/><br/>
 
-  <label for="max-${channel}">Max:</label>
-  <input id="max-${channel}" value="${max}" /><br/>
+  <label for="min-${channel}" class="num">Min:</label>
+  <input id="min-${channel}" value="${min}" class="num"/><br/>
 
-  <h3 id="raw-${channel}">${raw}</h3>
-  <h3 id="computed-${channel}">${computed}</h3>
+  <label for="max-${channel}" class="num">Max:</label>
+  <input id="max-${channel}" value="${max}" class="num" /><br/>
 
 </div>
 `;
   document.querySelector(parentSelector)?.appendChild(el);
 
   function updateDisplay() {
-    document.getElementById(`raw-${channel}`)!.innerText = "" + raw;
-    document.getElementById(`computed-${channel}`)!.innerText = "" + computed;
+    const rawEl = document.getElementById(`raw-${channel}`)!;
+    const rawPercentage = Math.floor(raw * 100);
+
+    rawEl.innerText = "" + raw.toPrecision(5);
+    rawEl.style.background = `linear-gradient(90deg, rgba(204,204,204,1) 0%, rgba(204,204,204,1) ${rawPercentage}%, rgba(255,255,255,1) ${rawPercentage}%)`;
+
+    document.getElementById(`computed-${channel}`)!.innerText =
+      "" + computed.toPrecision(5);
   }
 
   function update() {
