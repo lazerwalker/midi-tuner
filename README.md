@@ -32,7 +32,7 @@ You can see working JS sample code for connecting to the WebSocket server and pa
 
 The web app interface has 16 tiles, representing the NanoKontrol 2's 8 potentiometers and 8 sliders. Each one lets you enter a name/key, which is passed through any time that input's value changes. It also has a `min` and a `max`.
 
-When an input's value is changed, the value sent across the network is calculated based on the input's raw value, min, and max based on the formula `min + (max - min) * input` (where the raw `input` from the MIDI controller is a number between 0.0 and 1.0). In other words, if you set `min` to `5` and `max` to `100`, a slider/knob being set to 0 will result in an output of 5, while moving it to its maximum position will send `100`.
+When an input's value is changed, the value sent across the network is calculated based on the input's raw value, min, and max based on the formula `min + (max - min) * input` (where the raw `input` from the MIDI controller is a number between 0.0 and 1.0). In other words, if you set `min` to `5` and `max` to `100`, a slider/knob being set to its minimum position will result in an output of 5, while moving it to its maximum position will send `100`. The screenshot above may be clearer than this overcomplicated explanation, hah.
 
 While you could write code that maintains a manual mapping between WebSocket keys and where those objects live in your state, I recommend using something such as keypaths to programmatically traverse nested objects.
 
