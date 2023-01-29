@@ -4,13 +4,13 @@ This is a tool to help you tune your game's constants and magic numbers using a 
 
 Not sure why you'd want that? [This 10-minute video](https://www.youtube.com/watch?v=stM33UcLPJ0) may be a useful introduction.
 
+Using Unity to work on a game you can run in Play mode? My library [GroundKontrol](https://github.com/lazerwalker/groundkontrol) may be more helpful to you.
+
 <img src="./screenshot.png" />
 
 This is a web-based tool. When you you load up the tool in your web browser (by running a local web server), it connects to a MIDI controller connected over USB via WebMIDI (currently hardcoded to expect the number of inputs and channel numbers that a NanoKontrol 2 sends). For each of your controller's inputs, if you give that input a name/key and min/max values (representing what the lowest and highest outputs of that knob/slider should be mapped to), the web app will broadcast any changes over a WebSocket connection.
 
 In your game, if you connect to the local web server that's hosting the web app over WebSockets, you will receive updates any time one of those values is updated. You can write your own code to interpret that data and change your game's internal state or constants based on what you receive.
-
-Using Unity to work on a game you can run in Play mode? My library [GroundKontrol](https://github.com/lazerwalker/groundkontrol) may be more helpful to you.
 
 ## Server Setup
 
